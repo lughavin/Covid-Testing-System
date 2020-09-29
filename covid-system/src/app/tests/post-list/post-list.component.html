@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<mat-accordion multi="true" *ngIf="tests.length>0">
+  <mat-expansion-panel *ngFor="let test of tests">
+    <mat-expansion-panel-header>
+      {{test.username}}
+      {{test.password}}
+      {{test.condition}}
+      {{test.symptoms}}
+    </mat-expansion-panel-header>
+      <p>{{test.username}}</p>
+
+      <mat-action-row>
+        <button mat-button color="primary">EDIT</button>
+        <button mat-button color="warn">Delete</button>
+      </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="tests.length == 0"> No test added yet </p>

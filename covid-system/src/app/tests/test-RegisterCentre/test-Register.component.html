@@ -1,0 +1,20 @@
+<app-navbar></app-navbar>
+<h2 [ngStyle]="{'background-color':'#3f51b5'}">Register New Test Centre</h2>
+
+<mat-card>
+  <form (submit)="onAddTest(testForm)" #testForm="ngForm">
+  <mat-form-field hintLabel="Max 10 characters" appearance="fill">
+    <mat-label>Enter Test Centre Name</mat-label>
+    <input required name="username" ngModel matInput #input maxlength="10" placeholder="Nilai Hospital" #username="ngModel">
+    <mat-hint align="end">{{input.value?.length || 0}}/10</mat-hint>
+    <mat-error *ngIf="username.invalid">Please enter Test Centre name</mat-error>
+  </mat-form-field>
+
+
+<button
+  mat-raised-button
+  color = "accent"
+  type="submit">Register</button>
+</form>
+
+</mat-card>
